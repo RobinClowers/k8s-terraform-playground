@@ -35,3 +35,18 @@ cluster_ca_certificate = "LS0tLS1CRUdJTiB..."
 Now you should be able to run `terraform plan`, etc successfully.
 
 [tutorial]: https://developer.hashicorp.com/terraform/tutorials/kubernetes/kubernetes-provider
+
+## Applying changes
+
+From the `learn-terraform-deploy-nginx-kubernetes` subdirectory, run
+`terraform plan`. If the diff looks correct, run `terraform apply` to make the
+changes to your cluster.
+
+Verify the nginx deployment was created with `kubectl get deployments` or
+`k9s`.
+
+Verify the service was created with `kubectl get services`. I'm not sure how to
+do this in `k9s`.
+
+If everythink worked, you should be able to see the nginx welcome page at
+`http://localhost:30201/`!
